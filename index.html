@@ -1,79 +1,327 @@
 <!DOCTYPE html>
-<!-- saved from url=(0034)http://127.0.0.1:5500/sufiyan.html -->
+<!-- saved from url=(0043)http://127.0.0.1:5500/index.html/index.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Web Developer Portfolio">
+    <title>Web Developer Portfolio</title>
+    <style>
+        Global Styles
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background-color: #000000;
+            color: rgb(255, 253, 253);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        nav {
+            background: #050505;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            color: rgb(0, 0, 0);
+            font-size: 1.2rem;
+            padding: 10px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background: #1abc9c;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: url('https://via.placeholder.com/1200x600?text=Web+Developer') no-repeat center center/cover;
+            height: 60vh;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #1abc9c;
+            padding: 12px 25px;
+            color: rgb(255, 254, 254);
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #16a085;
+        }
+
+        /* About Section */
+        #about {
+            padding: 50px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 60px 20px;
+        }
+
+        #skills h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skill-item {
+            background: #fff;
+            padding: 30px;
+            margin: 10px;
+            width: 25%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .skill-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-item p {
+            color: #7f8c8d;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 60px 20px;
+            background-color: #ecf0f1;
+        }
+
+        #projects h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .project-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .project-item {
+            background: #fff;
+            padding: 20px;
+            margin: 10px;
+            width: 30%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .project-item h3 {
+            margin-top: 15px;
+            font-size: 1.5rem;
+        }
+
+        .project-item p {
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        .project-item .btn {
+            background-color: #1abc9c;
+            padding: 12px 25px;
+            color: white;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        #contact form input,
+        #contact form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact form button {
+            background-color: #1abc9c;
+            padding: 12px 25px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #34495e;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+    </style>
 </head>
 <body>
-    
-    <h1>SUFIYAN FAHEEM</h1>
+
+    <!-- Header Section -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="http://127.0.0.1:5500/sufiyan.html#home">web page</a></li>
-                <li><a href="http://127.0.0.1:5500/sufiyan.html#about">website developer</a></li>
-                <li><a href="http://127.0.0.1:5500/sufiyan.html#portfolio">Portfolio</a></li>
-                <li><a href="http://127.0.0.1:5500/sufiyan.html#contact">03331417145</a></li>
-            </ul>
-        </nav>
+        <h1>Sufiyan Faheem</h1>
+        <p>Web Developer | Front-End Specialist</p>
     </header>
-    <br> 
-       <section id="home">
-        <h1>Hi, I'm Sufiyan Faheem</h1>
-        <p>I’m a passionate web developer who specializes in building responsive, interactive, and user-friendly websites. I create web applications that are functional and engaging, bringing ideas to life with clean code.</p>
-        <p>Let's build something amazing together!</p>
-        <img src="./index_files/maxresdefault.jpg" alt="portfolio image" width="300px">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="http://127.0.0.1:5500/index.html/index.html#hero">Home</a></li>
+            <li><a href="http://127.0.0.1:5500/index.html/index.html#about">About</a></li>
+            <li><a href="http://127.0.0.1:5500/index.html/index.html#skills">Skills</a></li>
+            <li><a href="http://127.0.0.1:5500/index.html/index.html#projects">Projects</a></li>
+            <li><a href="http://127.0.0.1:5500/index.html/index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>I'm a passionate web developer focused on creating user-friendly and responsive websites.</p>
+        <button class="btn" onclick="scrollToContact()">Contact Me</button>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a web developer with expertise in both front-end and back-end technologies. With [1] years of experience, I am skilled in building modern websites and web applications using technologies like HTML5, CSS3, JavaScript, React, Node.js, and more.</p>
-        <h3>Skills:</h3>
-        <ul>
-            <br>
-            <li>Front-End: HTML, CSS, JavaScript, React, Vue.js</li>
-            <li>Back-End: Node.js, Express, PHP</li>
-            <li>Databases: MongoDB, MySQL</li>
-            <li>Version Control: Git, GitHub</li>
-            <li>Tools: Figma, VS Code, Docker, Postman</li>
-        </ul>
-    </section>
-    <br>
-    <section id="portfolio">
-        <h2>My Work</h2>
-        <div class="project">
-            <h3>Project 1: Personal Blog</h3>
-            <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, WordPress</p>
-            <p>A custom-built blog with a clean design and responsive layout. It features a simple content management system with WordPress, allowing for easy content updates and a smooth user experience.</p>
-            <img src="./index_files/th" alt="portfolio image" width="300px">
-            <a href="http://127.0.0.1:5500/sufiyan.html#" target="_blank">View Project</a>
-        </div>
-
-        <div class="project">
-            <h3>Project 2: E-Commerce Website</h3>
-            <p><strong>Technologies Used:</strong> React, Node.js, Express, MongoDB</p>
-            <p>An e-commerce website with user authentication, product listings, and a cart feature. This app uses React for the front-end and Node.js with Express for the back-end.</p>
-           <img src="./index_files/th(1)" alt="buissness image" width="300px">
-            <a href="http://127.0.0.1:5500/sufiyan.html#" target="_blank">View Project</a>
-        </div>
-
-        <div class="project">
-            <h3>Project 3: Portfolio Website</h3>
-            <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
-            <p>This personal portfolio website you're currently browsing! Built with clean, responsive code to showcase my work and skills.</p>
-            <img src="./index_files/6080c697-f497-4583-9371-db5caafdd934-cover.png" alt="" width="300px">
-            <a href="http://127.0.0.1:5500/sufiyan.html#" target="_blank">View Project</a>
-        </div>
+        <p>Hello! I'm Sufiyan Faheem, a web developer based in [Location]. I specialize in front-end development with a focus on HTML, CSS, JavaScript, and React. My goal is to create beautiful and functional websites that are both user-friendly and performant.</p>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:sufiyanfaheem281@example.com">sufiyanfaheem281@example.com</a></p>
-        <p>whatsapp: <a href="https://www.whatsapp.com/in/03331417145" target="_blank">03331417145 whatsapp</a></p>
-        <p>instagram: <a href="https://instagram.com/sufiyanfaheem" target="_blank">Sufiyan faheem
-        </a></p><p><a href="https://instagram.com/sufiyanfaheem" target="_blank">facebook</a><a href="http://facebook.com/">sufiyan faheem</a></p>
-
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <h3>HTML5</h3>
+                <p>Building structured web pages with semantic HTML5 elements.</p>
+            </div>
+            <div class="skill-item">
+                <h3>CSS3</h3>
+                <p>Creating responsive, accessible, and visually appealing web designs using CSS3.</p>
+            </div>
+            <div class="skill-item">
+                <h3>JavaScript</h3>
+                <p>Developing dynamic and interactive websites with JavaScript.</p>
+            </div>
+            <div class="skill-item">
+                <h3>React</h3>
+                <p>Building fast and scalable web applications with React.js.</p>
+            </div>
+        </div>
+   
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:sufiyanfaheem281@example.com">sufiyanfaheem281@example.com</a></p>
+            <p>whatsapp: <a href="https://www.whatsapp.com/in/03331417145" target="_blank">sufiyanfaheem whatsapp</a></p>
+            <p>instagram: <a href="https://instagram.com/sufiyanfaheem" target="_blank">Sufiyan faheem
+            </a></p><p><a href="https://instagram.com/sufiyanfaheem" target="_blank">facebook:</a><a href="http://facebook.com/">sufiyan faheem</a></p>
+             <p>contact:<a href="http://call%20us.com/">03331417145</a></p>
 <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
@@ -113,4 +361,5 @@
 	// ]]>
 </script>
 
-</section></body></html>
+
+    </section></section></body></html>
